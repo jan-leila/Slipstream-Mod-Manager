@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get the absolute path to this script's folder.
 if echo "$0" | awk '{exit(!/^\//);}'; then
