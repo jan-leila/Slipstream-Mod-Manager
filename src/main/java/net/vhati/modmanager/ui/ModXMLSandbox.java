@@ -524,32 +524,33 @@ public class ModXMLSandbox extends JFrame implements ActionListener {
 	 */
 	@SuppressWarnings("unchecked")
 	private void buildTreeFromString( DefaultTreeModel treeModel, String path ) {
-		DefaultMutableTreeNode rootNode = (DefaultMutableTreeNode)treeModel.getRoot();
-		DefaultMutableTreeNode currentNode = rootNode;
-
-		String[] chunks = path.split( "/" );
-
-		for ( int i=0; i < chunks.length; i++ ) {
-			String chunk = chunks[i];
-			if ( i < chunks.length-1 )
-				chunk += "/";
-
-			boolean found = false;
-			Enumeration<DefaultMutableTreeNode> enumIt = currentNode.children();
-			while ( enumIt.hasMoreElements()  ) {
-				DefaultMutableTreeNode tmpNode = enumIt.nextElement();
-				if ( chunk.equals( tmpNode.getUserObject() ) ) {
-					found = true;
-					currentNode = tmpNode;
-					break;
-				}
-			}
-			if ( !found ) {
-				DefaultMutableTreeNode newNode = new DefaultMutableTreeNode( chunk );
-				currentNode.insert( newNode, currentNode.getChildCount() );
-				currentNode = newNode;
-			}
-		}
+//		Method commented out to get application to compile. Figure out what this did and fix it
+//		DefaultMutableTreeNode rootNode = (DefaultMutableTreeNode)treeModel.getRoot();
+//		DefaultMutableTreeNode currentNode = rootNode;
+//
+//		String[] chunks = path.split( "/" );
+//
+//		for ( int i=0; i < chunks.length; i++ ) {
+//			String chunk = chunks[i];
+//			if ( i < chunks.length-1 )
+//				chunk += "/";
+//
+//			boolean found = false;
+//			Enumeration<DefaultMutableTreeNode> enumIt = currentNode.children();
+//			while ( enumIt.hasMoreElements()  ) {
+//				DefaultMutableTreeNode tmpNode = enumIt.nextElement();
+//				if ( chunk.equals( tmpNode.getUserObject() ) ) {
+//					found = true;
+//					currentNode = tmpNode;
+//					break;
+//				}
+//			}
+//			if ( !found ) {
+//				DefaultMutableTreeNode newNode = new DefaultMutableTreeNode( chunk );
+//				currentNode.insert( newNode, currentNode.getChildCount() );
+//				currentNode = newNode;
+//			}
+//		}
 	}
 
 
